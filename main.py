@@ -2,15 +2,17 @@
 +, * and integer literals into the corresponding NASM."""
 
 
-from pprint import pprint
+from codegen import codegen
 from parsing import parse
 from lexing import tokenize
 
 
 def main():
     """Entrypoint of the compiler."""
-    pprint(parse(tokenize("4 + 2 * 55 + 3")), width=1)
-
+    with open("source", "r", encoding="utf-8") as source:
+        asm = codegen(parse(tokenize(source.readline())))
+    with open("target/target.asm", "w", encoding="utf-8") as target:
+        target.write(asm)
 
 if __name__ == "__main__":
     main()
