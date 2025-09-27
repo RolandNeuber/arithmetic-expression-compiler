@@ -1,4 +1,5 @@
 .vscode
 __pycache__
-target
+target/*
+!target/.gitignore
 source
