@@ -65,7 +65,7 @@ _start:
     ; ======================
 
     mov rcx, 10             ; quotient
-    mov rbx, buffer + 32    ; point rbx to the end of buffer
+    mov rbx, buffer + 20    ; point rbx to the end of buffer
     mov r8, 0               ; counter for digits
 
 .convert_loop:
